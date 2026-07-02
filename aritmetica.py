@@ -1,0 +1,87 @@
+class Aritmetica:
+    #  Python solamente toma el ultimo constructor
+    # def __init__(self, operando1):
+    #    self.operando1 = operando1
+
+    def __init__(self, operando1=None, operando2=None):
+        self._operando1 = operando1
+        self._operando2 = operando2
+
+    def sumar(self):
+        resultado = self._operando1 + self._operando2
+        print(f'Resultado de la suma: {resultado}')
+
+    def resta(self):
+        resultado = self._operando1 - self._operando2
+        print(f'Resultado de la resta: {resultado}')
+
+    def multiplicar(self):
+        resultado = self._operando1 * self._operando2
+        print(f'Resultado de la multiplicacion: {resultado}')
+
+    def dividir(self):
+        resultado = self._operando1 / self._operando2
+        print(f'Resultado de la division: {resultado}')
+
+    @property
+    def operando1(self):
+        return self._operando1
+
+    @operando1.setter
+    def operando1(self, operando1):
+        self._operando1 = operando1
+
+    @property
+    def operando2(self):
+        return self._operando2
+
+    @operando2.setter
+    def operando2(self, operando2):
+        self._operando2 = operando2
+
+# Programa principal
+if __name__ == '__main__':
+    print('*** Ejemplo clase aritmetica ***')
+    print()
+    print('Primer Objeto')
+    aritmetica1 = Aritmetica(5, 7)
+    print(f'Valor operando1 del objeto aritmetica1: {aritmetica1.operando1}')
+    print(f'Valor operando2 del objeto aritmetica1: {aritmetica1.operando2}')
+    aritmetica1.sumar()
+    aritmetica1.resta()
+    aritmetica1.multiplicar()
+    aritmetica1.dividir()
+    aritmetica1.operando1 = 9
+    aritmetica1.operando2 = 15
+    print(f'Valor operando1 del objeto aritmetica1: {aritmetica1.operando1}')
+    print(f'Valor operando2 del objeto aritmetica1: {aritmetica1.operando2}')
+    aritmetica1.sumar()
+    aritmetica1.resta()
+    # Segundo objeto
+    aritmetica2 = Aritmetica(12, 16)
+    print()
+    print('Segundo Objeto')
+    print(f'Valor operando1 del objeto aritmetica2: {aritmetica1.operando1}')
+    print(f'Valor operando2 del objeto aritmetica2: {aritmetica1.operando2}')
+    aritmetica2.sumar()
+    aritmetica2.resta()
+    aritmetica2.multiplicar()
+    aritmetica2.dividir()
+    # Tercer objeto
+    aritmetica3 = Aritmetica(7)
+    print()
+    print('Tercer Objeto')
+    aritmetica3.operando2 = 9
+    aritmetica3.sumar()
+    # Cuarto Objeto
+    aritmetica4 = Aritmetica()
+    print()
+    print('Cuarto Objeto')
+    aritmetica4.operando1 = 2
+    aritmetica4.operando2 = 8
+    aritmetica4.sumar()
+    # Quinto Objeto
+    aritmetica5 = Aritmetica(operando2=4, operando1=3)
+    print()
+    print('Quinto Objeto')
+    aritmetica5.sumar()
